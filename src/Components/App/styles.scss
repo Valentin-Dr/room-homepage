@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-family: 'League Spartan', sans-serif;
+  overflow: hidden;
+  // overflow: hidden;
+}
+
+.nav-list li {
+  list-style: none;
+  display: inline;
+  position: relative;
+  &:nth-child(1){
+    cursor: pointer;
+    transition: font-size 100ms;
+    &:hover {
+      font-size: 30px;
+    }
+  }
+  &:nth-child(n+2) {
+    padding: 0 20px 10px 20px;
+    &:hover {
+      cursor: pointer;
+      &:after {
+        content: "";
+        background: white;
+        position: absolute;
+        bottom: 0;
+        left: 28px;
+        height: 2px;
+        width: 30%;
+      }
+    }
+  }
+}
+
+.home-button {
+  font-size: 26px;
+  padding-right: 20px;
+}
+
+.header-nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  padding: 50px 0 0 50px;
+  color: white;
+}
+
+.presentation {
+  &-image {
+    width: 55%;
+  }
+  &-description {
+    width: 35%;
+    padding: 0 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    position: relative;
+  }
+  &-title {
+    font-size: 50px;
+    padding: 0 0 20px 0;
+    margin: 0;
+    line-height: 45px;
+    width: 80%;
+  }
+  &-paragraph {
+    width: 80%;
+    font-size: 14px;
+    line-height: 20px;
+    color: hsl(0, 0%, 63%);
+  }
+}
+
+.next-image {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  width: 45%;
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.shop-now {
+  font-weight: 600;
+  letter-spacing: 10px;
+  width: 80%;
+  padding-top: 20px;
+  transition: filter 100ms;
+  &:hover {
+    cursor: pointer;
+    filter: invert(73%) sepia(2%) saturate(11%) hue-rotate(339deg) brightness(86%) contrast(99%);
+  }
+}
+
+.arrow {
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    transition: background-color 100ms;
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(0, 0%, 27%);
+    }
+  }
+  &-icon {
+    padding-left: 20px;
+  }
+  &-image {
+    width: 12%;
+    height: 40%;
+  }
+}
+
+.bottom {
+  &-description {
+    width: 45%;
+    display: inline-block;
+    text-align: left;
+    padding-top: 50px;
+  &-title {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 6px;
+    }
+  &-paragraph {
+    color: hsl(0, 0%, 63%);
+    line-height: 26px;
+    }
+  }
+}
+
+.bottom-left-image, .bottom-right-image {
+  height: 108%;
+  width: 25%;
+}
+
+.flex {
+  display: flex;
+  &-space-between {
+    justify-content: space-between;
+  }
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-none {
+  display: none;
+}
+
+.hidden-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 130px;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  & li {
+    list-style: none;
+    display: inline;
+    padding: 0 15px;
+    font-weight: 700;
+    &:nth-child(1) {
+      padding-left: 60px;
+    }
+  }
+}
+
+.black-filter:not(.hidden-navbar) {
+  background-color: white;
+  filter: brightness(70%);
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .first-row {
+    flex-direction: column;
+  }
+
+  .presentation-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .presentation {
+    &-description {
+      padding: 40px 0 0 0;
+      width: 100%;
+    }
+    &-title {
+      font-size: 34px;
+    }
+  }
+
+  .next-image {
+    top: -45px;
+    right: 0;
+    left: auto;
+    width: 30%;
+    height: 45px;
+  }
+
+  .responsive-column {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  .bottom-left-image, .bottom-right-image {
+    width: auto;
+  }
+
+  .bottom-description {
+    width: auto;
+    padding: 50px;
+  }
+
+  .header-nav {
+    width: 100%;
+    justify-content: center;
+    padding: 30px 0 0 0;
+  }
+
+  .nav-list li {
+    &:nth-child(n+2) {
+      display: none;
+    }
+  }
+
+  .open-menu-button {
+    cursor: pointer;
+    position: absolute;
+    left: 25px;
+    top: 56px;
+    z-index: 2;
+  }
+}
